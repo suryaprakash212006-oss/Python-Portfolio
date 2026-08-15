@@ -1,0 +1,14 @@
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.options import Options
+from webdriver_manager.chrome import ChromeDriverManager      #SELENIUM PAGE OPEN
+import time
+options = Options()
+options.add_argument("--start-maximized")
+driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+driver.get("https://www.selenium.dev")
+
+print(" Selenium page opened successfully!")
+print("Page Title:", driver.title)
+time.sleep(5)
+driver.quit()
